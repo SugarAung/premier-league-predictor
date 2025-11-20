@@ -1,0 +1,31 @@
+# Environment
+venv/
+# Python stuff
+__pycache__/
+*.pyc
+
+# Data files
+data/raw/
+data/processed/*.csv
+pl_fixtures_from_api.csv
+pl_predictions.csv
+pl_results_from_api.csv
+
+# Models
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Streamlit upload cache
+.streamlit/
+
+# OS / IDE files
+.DS_Store
+.vscode/
+
+my_api_key.txt
+pl_predictions_backup.csv
