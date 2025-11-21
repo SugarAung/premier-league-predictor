@@ -1,5 +1,9 @@
 # Premier League Match Prediction (XGBoost Hybrid)
 
+👉 **Live App:**  
+https://premier-league-predictor-8waymlszeubtxrzp6rdrtm.streamlit.app
+
+
 This project is a **Premier League match prediction system** built around a hybrid XGBoost model.  
 It:
 
