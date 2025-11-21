@@ -1,18 +1,30 @@
 # Environment
 venv/
-# Python stuff
 __pycache__/
 *.pyc
 
-# Data files
+# Raw data (safe to ignore)
 data/raw/
-data/processed/*.csv
-pl_fixtures_from_api.csv
-pl_predictions.csv
-pl_results_from_api.csv
 
-# Models
-models/*.pkl
+# DO NOT ignore processed essential files
+# Keep feature + model input data
+!data/processed/
+!data/processed/*.csv
+
+# Ignore backup or temporary CSVs
+data/processed/*_backup.csv
+data/processed/*_temp.csv
+
+# Live outputs (optional to ignore)
+data/live/*_backup.csv
+
+# DON'T ignore model files (needed for predictions!)
+!models/
+!models/*.pkl
+
+# Ignore large optional models
+models/*_old.pkl
+models/*_test.pkl
 
 # Jupyter
 .ipynb_checkpoints/
@@ -20,12 +32,22 @@ models/*.pkl
 # Logs
 *.log
 
-# Streamlit upload cache
+# Streamlit uploads
 .streamlit/
 
-# OS / IDE files
-.DS_Store
+# IDE / OS files
 .vscode/
+.DS_Store
 
+# API key
 my_api_key.txt
+
+# Ignore temporary prediction outputs (but keep final)
 pl_predictions_backup.csv
+
+# KEEP essential live data files
+!data/live/
+!data/live/pl_predictions.csv
+!data/live/pl_results_from_api.csv
+!data/live/pl_fixtures_from_api.csv
+!data/live/live_predictions_history.csv

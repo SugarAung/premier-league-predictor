@@ -1,0 +1,111 @@
+season,gameweek,date,home_team,away_team,full_time_home_goals,full_time_away_goals,actual_result
+2025-2026,1,2025-08-15,Liverpool FC,AFC Bournemouth,4,2,H
+2025-2026,1,2025-08-16,Aston Villa FC,Newcastle United FC,0,0,D
+2025-2026,1,2025-08-16,Brighton & Hove Albion FC,Fulham FC,1,1,D
+2025-2026,1,2025-08-16,Sunderland AFC,West Ham United FC,3,0,H
+2025-2026,1,2025-08-16,Tottenham Hotspur FC,Burnley FC,3,0,H
+2025-2026,1,2025-08-16,Wolverhampton Wanderers FC,Manchester City FC,0,4,A
+2025-2026,1,2025-08-17,Nottingham Forest FC,Brentford FC,3,1,H
+2025-2026,1,2025-08-17,Chelsea FC,Crystal Palace FC,0,0,D
+2025-2026,1,2025-08-17,Manchester United FC,Arsenal FC,0,1,A
+2025-2026,1,2025-08-18,Leeds United FC,Everton FC,1,0,H
+2025-2026,2,2025-08-22,West Ham United FC,Chelsea FC,1,5,A
+2025-2026,2,2025-08-23,Manchester City FC,Tottenham Hotspur FC,0,2,A
+2025-2026,2,2025-08-23,AFC Bournemouth,Wolverhampton Wanderers FC,1,0,H
+2025-2026,2,2025-08-23,Brentford FC,Aston Villa FC,1,0,H
+2025-2026,2,2025-08-23,Burnley FC,Sunderland AFC,2,0,H
+2025-2026,2,2025-08-23,Arsenal FC,Leeds United FC,5,0,H
+2025-2026,2,2025-08-24,Crystal Palace FC,Nottingham Forest FC,1,1,D
+2025-2026,2,2025-08-24,Everton FC,Brighton & Hove Albion FC,2,0,H
+2025-2026,2,2025-08-24,Fulham FC,Manchester United FC,1,1,D
+2025-2026,2,2025-08-25,Newcastle United FC,Liverpool FC,2,3,A
+2025-2026,3,2025-08-30,Chelsea FC,Fulham FC,2,0,H
+2025-2026,3,2025-08-30,Sunderland AFC,Brentford FC,2,1,H
+2025-2026,3,2025-08-30,Manchester United FC,Burnley FC,3,2,H
+2025-2026,3,2025-08-30,Tottenham Hotspur FC,AFC Bournemouth,0,1,A
+2025-2026,3,2025-08-30,Wolverhampton Wanderers FC,Everton FC,2,3,A
+2025-2026,3,2025-08-30,Leeds United FC,Newcastle United FC,0,0,D
+2025-2026,3,2025-08-31,Brighton & Hove Albion FC,Manchester City FC,2,1,H
+2025-2026,3,2025-08-31,Nottingham Forest FC,West Ham United FC,0,3,A
+2025-2026,3,2025-08-31,Liverpool FC,Arsenal FC,1,0,H
+2025-2026,3,2025-08-31,Aston Villa FC,Crystal Palace FC,0,3,A
+2025-2026,4,2025-09-13,Arsenal FC,Nottingham Forest FC,3,0,H
+2025-2026,4,2025-09-13,AFC Bournemouth,Brighton & Hove Albion FC,2,1,H
+2025-2026,4,2025-09-13,Crystal Palace FC,Sunderland AFC,0,0,D
+2025-2026,4,2025-09-13,Everton FC,Aston Villa FC,0,0,D
+2025-2026,4,2025-09-13,Fulham FC,Leeds United FC,1,0,H
+2025-2026,4,2025-09-13,Newcastle United FC,Wolverhampton Wanderers FC,1,0,H
+2025-2026,4,2025-09-13,West Ham United FC,Tottenham Hotspur FC,0,3,A
+2025-2026,4,2025-09-13,Brentford FC,Chelsea FC,2,2,D
+2025-2026,4,2025-09-14,Burnley FC,Liverpool FC,0,1,A
+2025-2026,4,2025-09-14,Manchester City FC,Manchester United FC,3,0,H
+2025-2026,5,2025-09-20,Liverpool FC,Everton FC,2,1,H
+2025-2026,5,2025-09-20,Brighton & Hove Albion FC,Tottenham Hotspur FC,2,2,D
+2025-2026,5,2025-09-20,Burnley FC,Nottingham Forest FC,1,1,D
+2025-2026,5,2025-09-20,West Ham United FC,Crystal Palace FC,1,2,A
+2025-2026,5,2025-09-20,Wolverhampton Wanderers FC,Leeds United FC,1,3,A
+2025-2026,5,2025-09-20,Manchester United FC,Chelsea FC,2,1,H
+2025-2026,5,2025-09-20,Fulham FC,Brentford FC,3,1,H
+2025-2026,5,2025-09-21,AFC Bournemouth,Newcastle United FC,0,0,D
+2025-2026,5,2025-09-21,Sunderland AFC,Aston Villa FC,1,1,D
+2025-2026,5,2025-09-21,Arsenal FC,Manchester City FC,1,1,D
+2025-2026,6,2025-09-27,Brentford FC,Manchester United FC,3,1,H
+2025-2026,6,2025-09-27,Crystal Palace FC,Liverpool FC,2,1,H
+2025-2026,6,2025-09-27,Chelsea FC,Brighton & Hove Albion FC,1,3,A
+2025-2026,6,2025-09-27,Leeds United FC,AFC Bournemouth,2,2,D
+2025-2026,6,2025-09-27,Manchester City FC,Burnley FC,5,1,H
+2025-2026,6,2025-09-27,Nottingham Forest FC,Sunderland AFC,0,1,A
+2025-2026,6,2025-09-27,Tottenham Hotspur FC,Wolverhampton Wanderers FC,1,1,D
+2025-2026,6,2025-09-28,Aston Villa FC,Fulham FC,3,1,H
+2025-2026,6,2025-09-28,Newcastle United FC,Arsenal FC,1,2,A
+2025-2026,6,2025-09-29,Everton FC,West Ham United FC,1,1,D
+2025-2026,7,2025-10-03,AFC Bournemouth,Fulham FC,3,1,H
+2025-2026,7,2025-10-04,Leeds United FC,Tottenham Hotspur FC,1,2,A
+2025-2026,7,2025-10-04,Arsenal FC,West Ham United FC,2,0,H
+2025-2026,7,2025-10-04,Manchester United FC,Sunderland AFC,2,0,H
+2025-2026,7,2025-10-04,Chelsea FC,Liverpool FC,2,1,H
+2025-2026,7,2025-10-05,Aston Villa FC,Burnley FC,2,1,H
+2025-2026,7,2025-10-05,Everton FC,Crystal Palace FC,2,1,H
+2025-2026,7,2025-10-05,Newcastle United FC,Nottingham Forest FC,2,0,H
+2025-2026,7,2025-10-05,Wolverhampton Wanderers FC,Brighton & Hove Albion FC,1,1,D
+2025-2026,7,2025-10-05,Brentford FC,Manchester City FC,0,1,A
+2025-2026,8,2025-10-18,Nottingham Forest FC,Chelsea FC,0,3,A
+2025-2026,8,2025-10-18,Brighton & Hove Albion FC,Newcastle United FC,2,1,H
+2025-2026,8,2025-10-18,Crystal Palace FC,AFC Bournemouth,3,3,D
+2025-2026,8,2025-10-18,Burnley FC,Leeds United FC,2,0,H
+2025-2026,8,2025-10-18,Manchester City FC,Everton FC,2,0,H
+2025-2026,8,2025-10-18,Sunderland AFC,Wolverhampton Wanderers FC,2,0,H
+2025-2026,8,2025-10-18,Fulham FC,Arsenal FC,0,1,A
+2025-2026,8,2025-10-19,Tottenham Hotspur FC,Aston Villa FC,1,2,A
+2025-2026,8,2025-10-19,Liverpool FC,Manchester United FC,1,2,A
+2025-2026,8,2025-10-20,West Ham United FC,Brentford FC,0,2,A
+2025-2026,9,2025-10-24,Leeds United FC,West Ham United FC,2,1,H
+2025-2026,9,2025-10-25,Chelsea FC,Sunderland AFC,1,2,A
+2025-2026,9,2025-10-25,Newcastle United FC,Fulham FC,2,1,H
+2025-2026,9,2025-10-25,Manchester United FC,Brighton & Hove Albion FC,4,2,H
+2025-2026,9,2025-10-25,Brentford FC,Liverpool FC,3,2,H
+2025-2026,9,2025-10-26,AFC Bournemouth,Nottingham Forest FC,2,0,H
+2025-2026,9,2025-10-26,Aston Villa FC,Manchester City FC,1,0,H
+2025-2026,9,2025-10-26,Arsenal FC,Crystal Palace FC,1,0,H
+2025-2026,9,2025-10-26,Wolverhampton Wanderers FC,Burnley FC,2,3,A
+2025-2026,9,2025-10-26,Everton FC,Tottenham Hotspur FC,0,3,A
+2025-2026,10,2025-11-01,Brighton & Hove Albion FC,Leeds United FC,3,0,H
+2025-2026,10,2025-11-01,Crystal Palace FC,Brentford FC,2,0,H
+2025-2026,10,2025-11-01,Burnley FC,Arsenal FC,0,2,A
+2025-2026,10,2025-11-01,Fulham FC,Wolverhampton Wanderers FC,3,0,H
+2025-2026,10,2025-11-01,Nottingham Forest FC,Manchester United FC,2,2,D
+2025-2026,10,2025-11-01,Tottenham Hotspur FC,Chelsea FC,0,1,A
+2025-2026,10,2025-11-01,Liverpool FC,Aston Villa FC,2,0,H
+2025-2026,10,2025-11-02,West Ham United FC,Newcastle United FC,3,1,H
+2025-2026,10,2025-11-02,Manchester City FC,AFC Bournemouth,3,1,H
+2025-2026,10,2025-11-03,Sunderland AFC,Everton FC,1,1,D
+2025-2026,11,2025-11-08,Tottenham Hotspur FC,Manchester United FC,2,2,D
+2025-2026,11,2025-11-08,Everton FC,Fulham FC,2,0,H
+2025-2026,11,2025-11-08,West Ham United FC,Burnley FC,3,2,H
+2025-2026,11,2025-11-08,Sunderland AFC,Arsenal FC,2,2,D
+2025-2026,11,2025-11-08,Chelsea FC,Wolverhampton Wanderers FC,3,0,H
+2025-2026,11,2025-11-09,Aston Villa FC,AFC Bournemouth,4,0,H
+2025-2026,11,2025-11-09,Crystal Palace FC,Brighton & Hove Albion FC,0,0,D
+2025-2026,11,2025-11-09,Brentford FC,Newcastle United FC,3,1,H
+2025-2026,11,2025-11-09,Nottingham Forest FC,Leeds United FC,3,1,H
+2025-2026,11,2025-11-09,Manchester City FC,Liverpool FC,3,0,H
