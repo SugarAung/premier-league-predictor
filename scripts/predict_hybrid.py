@@ -3,14 +3,13 @@
 Use the trained hybrid XGBoost models to predict outcomes
 (H / D / A) for upcoming fixtures.
 
-Usage (defaults should work):
-    python predict_hybrid.py
+Typical usage (from project root):
+    python scripts/predict_hybrid.py
 
-Or explicitly:
-    python predict_hybrid.py \
-        --model models/xgb_super_hybrid.pkl \
-        --fixtures data/processed/pl_fixtures_features.csv \
-        --output pl_predictions.csv
+This will:
+- load the hybrid model from models/xgb_super_hybrid.pkl
+- load fixture features from data/processed/pl_fixtures_features.csv
+- write predictions to data/live/pl_predictions.csv
 """
 
 import os
@@ -23,6 +22,7 @@ import pandas as pd
 
 
 def load_hybrid_model(path: str) -> Dict[str, Any]:
+    """Load the hybrid model dict with full_model, sharp_model, label_encoder."""
     if not os.path.exists(path):
         raise FileNotFoundError(f"Hybrid model file not found: {path}")
     with open(path, "rb") as f:
@@ -38,6 +38,7 @@ def load_hybrid_model(path: str) -> Dict[str, Any]:
 
 
 def load_fixtures_features(path: str) -> pd.DataFrame:
+    """Load engineered features for upcoming fixtures."""
     if not os.path.exists(path):
         raise FileNotFoundError(f"Fixtures features file not found: {path}")
     df = pd.read_csv(path, parse_dates=["date"])
@@ -47,19 +48,16 @@ def load_fixtures_features(path: str) -> pd.DataFrame:
 
 
 def build_design_matrices(
-    fixtures_df: pd.DataFrame,
+    df: pd.DataFrame,
     full_model_bundle: Dict[str, Any],
     sharp_model_bundle: Dict[str, Any],
-) -> (np.ndarray, np.ndarray):
-    """
-    Build X_full and X_sharp using the stored feature_col lists
-    inside each model bundle. Fill NaNs with 0.0 like in training.
-    """
+):
+    """Build X matrices for full and sharp models using their feature_cols."""
     full_feats = full_model_bundle["feature_cols"]
     sharp_feats = sharp_model_bundle["feature_cols"]
 
-    missing_full = [c for c in full_feats if c not in fixtures_df.columns]
-    missing_sharp = [c for c in sharp_feats if c not in fixtures_df.columns]
+    missing_full = [c for c in full_feats if c not in df.columns]
+    missing_sharp = [c for c in sharp_feats if c not in df.columns]
 
     if missing_full:
         raise ValueError(
@@ -72,31 +70,22 @@ def build_design_matrices(
             f"{missing_sharp}"
         )
 
-    X_full = fixtures_df[full_feats].copy().fillna(0.0)
-    X_sharp = fixtures_df[sharp_feats].copy().fillna(0.0)
+    X_full = df[full_feats].copy().fillna(0.0).values
+    X_sharp = df[sharp_feats].copy().fillna(0.0).values
 
-    return X_full.values, X_sharp.values
+    return X_full, X_sharp
 
 
 def hybrid_predict_proba(
     full_model_bundle: Dict[str, Any],
     sharp_model_bundle: Dict[str, Any],
-    X_full: np.ndarray,
-    X_sharp: np.ndarray,
+    X_full,
+    X_sharp,
     alpha: float = 0.75,
-) -> np.ndarray:
-    """
-    Weighted ensemble:
-        final_prob = alpha * sharp + (1 - alpha) * full
-    alpha = 0.75 (same as in train_model_super_hybrid.py)
-    """
+):
+    """Blend probabilities from sharp + full models: alpha*sharp + (1-alpha)*full."""
     full_model = full_model_bundle["model"]
     sharp_model = sharp_model_bundle["model"]
-
-    if not hasattr(full_model, "predict_proba"):
-        raise ValueError("Full model does not support predict_proba().")
-    if not hasattr(sharp_model, "predict_proba"):
-        raise ValueError("Sharp model does not support predict_proba().")
 
     proba_full = full_model.predict_proba(X_full)
     proba_sharp = sharp_model.predict_proba(X_sharp)
@@ -110,14 +99,8 @@ def hybrid_predict_proba(
     return alpha * proba_sharp + (1.0 - alpha) * proba_full
 
 
-def proba_to_labels(
-    proba: np.ndarray,
-    label_encoder,
-) -> pd.DataFrame:
-    """
-    Convert probability matrix (n_samples x n_classes) into
-    prob_H / prob_D / prob_A + predicted_label using label_encoder.classes_.
-    """
+def proba_to_labels(proba: np.ndarray, label_encoder) -> pd.DataFrame:
+    """Convert probability matrix → prob_H/prob_D/prob_A + predicted_label."""
     classes = list(label_encoder.classes_)  # e.g. ['A', 'D', 'H']
     n_classes = len(classes)
 
@@ -129,7 +112,6 @@ def proba_to_labels(
 
     label_to_index = {label: idx for idx, label in enumerate(classes)}
 
-    # Get column indices for each result
     try:
         idx_H = label_to_index["H"]
         idx_D = label_to_index["D"]
@@ -143,11 +125,10 @@ def proba_to_labels(
     prob_D = proba[:, idx_D]
     prob_A = proba[:, idx_A]
 
-    # Predicted encoded class and labels
     pred_enc = proba.argmax(axis=1)
     pred_labels = [classes[i] for i in pred_enc]
 
-    df = pd.DataFrame(
+    return pd.DataFrame(
         {
             "prob_H": prob_H,
             "prob_D": prob_D,
@@ -155,7 +136,6 @@ def proba_to_labels(
             "predicted_label": pred_labels,
         }
     )
-    return df
 
 
 def main():
@@ -177,45 +157,55 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        default="pl_predictions.csv",
+        default="data/live/pl_predictions.csv",
         help="Output CSV file for predictions.",
     )
 
     args = parser.parse_args()
 
-    print(f"Loading hybrid model from: {args.model}")
+    print(f"[predict] Loading hybrid model from: {args.model}")
     hybrid = load_hybrid_model(args.model)
     full_bundle = hybrid["full_model"]
     sharp_bundle = hybrid["sharp_model"]
     label_encoder = hybrid["label_encoder"]
 
-    print(f"Loading fixtures features from: {args.fixtures}")
-    fixtures_df = load_fixtures_features(args.fixtures)
+    print(f"[predict] Loading fixture features from: {args.fixtures}")
+    df = load_fixtures_features(args.fixtures)
 
-    print("Building design matrices for full + sharp models...")
-    X_full, X_sharp = build_design_matrices(fixtures_df, full_bundle, sharp_bundle)
+    print("[predict] Building design matrices for full + sharp models...")
+    X_full, X_sharp = build_design_matrices(df, full_bundle, sharp_bundle)
 
-    print("Predicting hybrid probabilities...")
+    print("[predict] Predicting hybrid probabilities for upcoming fixtures...")
     proba = hybrid_predict_proba(full_bundle, sharp_bundle, X_full, X_sharp, alpha=0.75)
 
-    print("Converting probabilities to labels...")
+    print("[predict] Converting probabilities to labels...")
     prob_df = proba_to_labels(proba, label_encoder)
 
-    # Merge with original fixtures info
-    output_df = fixtures_df.copy()
+    # Attach metadata (season, gameweek, date, home/away) + probs + label
+    meta_cols = ["season", "gameweek", "date", "home_team", "away_team"]
+    missing_meta = [c for c in meta_cols if c not in df.columns]
+    if missing_meta:
+        raise ValueError(
+            "Fixtures features CSV is missing required metadata columns:\n"
+            f"{missing_meta}"
+        )
+
+    out = df[meta_cols].copy()
     for col in prob_df.columns:
-        output_df[col] = prob_df[col]
+        out[col] = prob_df[col]
 
-    # Human-readable label
-    outcome_map = {"H": "Home Win", "D": "Draw", "A": "Away Win"}
-    output_df["predicted_outcome"] = output_df["predicted_label"].map(outcome_map)
+    # Ensure pred_result column for app
+    out["pred_result"] = out["predicted_label"]
 
-    # Save
-    os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
-    output_df.to_csv(args.output, index=False)
-    print(f"\nSaved predictions to: {args.output}")
-    print(f"Rows: {len(output_df)}")
-    print("Columns:", list(output_df.columns))
+    # Make sure output directory exists
+    out_dir = os.path.dirname(args.output)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+
+    out.to_csv(args.output, index=False)
+
+    print(f"[predict] Saved predictions for {len(out)} fixtures to: {args.output}")
+    print("[predict] Columns:", list(out.columns))
 
 
 if __name__ == "__main__":

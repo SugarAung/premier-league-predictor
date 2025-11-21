@@ -8,10 +8,11 @@ PROCESSED_DIR = DATA_DIR / "processed"
 MATCHES_PATH = PROCESSED_DIR / "matches_master.csv"
 TRAIN_SUPER_PATH = PROCESSED_DIR / "match_features_super.csv"
 FIXTURES_RAW_PATH = Path("pl_fixtures_from_api.csv")
+ODDS_FIXTURES_PATH = PROCESSED_DIR / "pl_fixtures_odds.csv"  # optional odds file
 
 OUT_PATH = PROCESSED_DIR / "pl_fixtures_features.csv"
 
-# Elo params – same as in your build_elo_features.py
+# Elo params – same as before
 K = 20
 HOME_ADVANTAGE = 100
 BASE_RATING = 1500.0
@@ -19,24 +20,35 @@ BASE_RATING = 1500.0
 
 def load_data():
     if not MATCHES_PATH.exists():
-        raise FileNotFoundError(f"{MATCHES_PATH} not found. Run data_prep.py + build_historical_matches.py first.")
+        raise FileNotFoundError(
+            f"{MATCHES_PATH} not found. Run data_prep.py + build_historical_matches.py first."
+        )
 
     if not FIXTURES_RAW_PATH.exists():
-        raise FileNotFoundError(f"{FIXTURES_RAW_PATH} not found. Run update_results.py first.")
+        raise FileNotFoundError(
+            f"{FIXTURES_RAW_PATH} not found. Run update_results.py first."
+        )
 
     if not TRAIN_SUPER_PATH.exists():
-        raise FileNotFoundError(f"{TRAIN_SUPER_PATH} not found. Run build_super_features.py first.")
+        raise FileNotFoundError(
+            f"{TRAIN_SUPER_PATH} not found. Run build_super_features.py first."
+        )
 
     matches = pd.read_csv(MATCHES_PATH, parse_dates=["date"])
     fixtures = pd.read_csv(FIXTURES_RAW_PATH, parse_dates=["date"])
     train_super = pd.read_csv(TRAIN_SUPER_PATH)
 
-    return matches, fixtures, train_super
+    # Optional odds for upcoming fixtures
+    if ODDS_FIXTURES_PATH.exists():
+        odds_fix = pd.read_csv(ODDS_FIXTURES_PATH, parse_dates=["date"])
+        print(f"Loaded fixture odds from {ODDS_FIXTURES_PATH} (rows: {len(odds_fix)})")
+    else:
+        odds_fix = None
+        print(f"No fixture odds file at {ODDS_FIXTURES_PATH}, using historical means.")
+
+    return matches, fixtures, train_super, odds_fix
 
 
-# -------------------------------------------------------------------
-# Form features: last 5 games for each team before the fixture date
-# -------------------------------------------------------------------
 def compute_team_form(matches: pd.DataFrame, team: str, cutoff_date, window: int = 5):
     """Return (avg_gf, avg_ga, avg_pts) over last `window` games before cutoff_date."""
     team_games = matches[
@@ -67,7 +79,7 @@ def compute_team_form(matches: pd.DataFrame, team: str, cutoff_date, window: int
                 pts = 1
             else:
                 pts = 0
-        else:  # team is away
+        else:
             gf = row["away_goals"]
             ga = row["home_goals"]
             if res == "A":
@@ -89,14 +101,10 @@ def compute_team_form(matches: pd.DataFrame, team: str, cutoff_date, window: int
     )
 
 
-# -------------------------------------------------------------------
-# Elo history from all past matches
-# -------------------------------------------------------------------
 def build_elo_history(matches: pd.DataFrame) -> pd.DataFrame:
-    """Run Elo through historical matches and record rating AFTER each match for both teams."""
+    """Run Elo through historical matches and record rating AFTER each match."""
     ratings = {}
     records = []
-
     matches_sorted = matches.sort_values("date")
 
     for _, row in matches_sorted.iterrows():
@@ -107,7 +115,6 @@ def build_elo_history(matches: pd.DataFrame) -> pd.DataFrame:
         Rh = ratings.get(home, BASE_RATING)
         Ra = ratings.get(away, BASE_RATING)
 
-        # Expected scores with home advantage
         Rh_eff = Rh + HOME_ADVANTAGE
         Ra_eff = Ra
 
@@ -118,7 +125,7 @@ def build_elo_history(matches: pd.DataFrame) -> pd.DataFrame:
             Sh, Sa = 1.0, 0.0
         elif res == "A":
             Sh, Sa = 0.0, 1.0
-        else:  # Draw
+        else:
             Sh, Sa = 0.5, 0.5
 
         Rh_new = Rh + K * (Sh - exp_home)
@@ -135,7 +142,7 @@ def build_elo_history(matches: pd.DataFrame) -> pd.DataFrame:
 
 
 def get_team_elo(elo_hist: pd.DataFrame, team: str, cutoff_date) -> float:
-    """Return the latest Elo AFTER the last match before cutoff_date."""
+    """Return latest Elo AFTER last match before cutoff_date."""
     if elo_hist.empty:
         return BASE_RATING
 
@@ -147,17 +154,13 @@ def get_team_elo(elo_hist: pd.DataFrame, team: str, cutoff_date) -> float:
     return float(hist.iloc[-1]["elo_after"])
 
 
-# -------------------------------------------------------------------
-# Main builder
-# -------------------------------------------------------------------
 def build_fixture_super_features():
-    matches, fixtures, train_super = load_data()
+    matches, fixtures, train_super, odds_fix = load_data()
 
-    # Build Elo history from all past matches
     print("Building Elo history from matches_master.csv ...")
     elo_hist = build_elo_history(matches)
 
-    # Pre-compute means of odds/probability columns from training super features
+    # Columns that relate to odds/probabilities
     odds_prob_cols = [
         "home_odds_close",
         "draw_odds_close",
@@ -183,6 +186,7 @@ def build_fixture_super_features():
         "odds_imbalance_home_away",
     ]
 
+    # Historical mean values (fallback when we don't have live odds)
     odds_means = {}
     for col in odds_prob_cols:
         if col in train_super.columns:
@@ -201,19 +205,11 @@ def build_fixture_super_features():
         away = row["away_team"]
         status = row.get("status", "")
 
-        # Form features
-        (
-            home_gf,
-            home_ga,
-            home_pts,
-        ) = compute_team_form(matches, home, date)
-        (
-            away_gf,
-            away_ga,
-            away_pts,
-        ) = compute_team_form(matches, away, date)
+        # --- Form features ---
+        home_gf, home_ga, home_pts = compute_team_form(matches, home, date)
+        away_gf, away_ga, away_pts = compute_team_form(matches, away, date)
 
-        # Elo features
+        # --- Elo features ---
         home_elo = get_team_elo(elo_hist, home, date)
         away_elo = get_team_elo(elo_hist, away, date)
         elo_diff = home_elo - away_elo
@@ -232,14 +228,12 @@ def build_fixture_super_features():
             "home_team": home,
             "away_team": away,
             "status": status,
-            # Form
             "home_avg_goals_for_last5": home_gf,
             "home_avg_goals_against_last5": home_ga,
             "home_avg_points_last5": home_pts,
             "away_avg_goals_for_last5": away_gf,
             "away_avg_goals_against_last5": away_ga,
             "away_avg_points_last5": away_pts,
-            # Elo
             "home_elo_before": home_elo,
             "away_elo_before": away_elo,
             "elo_diff": elo_diff,
@@ -247,24 +241,34 @@ def build_fixture_super_features():
             "elo_ratio_away": elo_ratio_away,
         }
 
-        # Odds + probability features – we don't know them for future,
-        # so we plug in the historical mean as a neutral baseline.
-        for col, mean_val in odds_means.items():
-            record[col] = mean_val
+        # --- Odds & probability features ---
+        # Start with historical means
+        odds_values = {col: odds_means[col] for col in odds_prob_cols}
+
+        # If we have a fixture-odds file, try to override with real odds
+        if odds_fix is not None:
+            mask = (
+                (odds_fix["season"] == season)
+                & (odds_fix["gameweek"] == gw)
+                & (odds_fix["date"] == date)
+                & (odds_fix["home_team"] == home)
+                & (odds_fix["away_team"] == away)
+            )
+            if mask.any():
+                row_odds = odds_fix.loc[mask].iloc[0]
+                for col in odds_prob_cols:
+                    if col in row_odds and not pd.isna(row_odds[col]):
+                        odds_values[col] = row_odds[col]
+
+        # Attach odds fields
+        for col, val in odds_values.items():
+            record[col] = val
 
         rows.append(record)
 
     feat_df = pd.DataFrame(rows)
 
-    # Ensure columns order roughly matches training super features (not strictly required)
-    base_cols = [
-        "season",
-        "gameweek",
-        "date",
-        "home_team",
-        "away_team",
-        "status",
-    ]
+    base_cols = ["season", "gameweek", "date", "home_team", "away_team", "status"]
     feature_cols = [
         "home_avg_goals_for_last5",
         "home_avg_goals_against_last5",
