@@ -1,8 +1,26 @@
+#!/usr/bin/env python
+"""
+Fetch Premier League results + fixtures from football-data.org
+and save them into data/live/ for the Streamlit app.
+
+Outputs:
+- data/live/pl_results_from_api.csv      (finished matches with actual_result)
+- data/live/pl_fixtures_from_api.csv     (upcoming / not-finished fixtures)
+"""
+
 import requests
 import pandas as pd
+from pathlib import Path
 
-API_TOKEN = "3517c5add97f4ce299acef91844b7585"  # <-- your token
+# -----------------------------
+# Config
+# -----------------------------
+# ⚠️ PUT YOUR REAL TOKEN HERE LOCALLY, BUT DO NOT COMMIT IT TO GITHUB
+API_TOKEN = Path("my_api_key.txt").read_text().strip()
 BASE_URL = "https://api.football-data.org/v4"
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+LIVE_DIR = ROOT_DIR / "data" / "live"
 
 
 def fetch_premier_league_matches():
@@ -47,11 +65,13 @@ def build_results_dataframe(matches):
         home_goals = full_time["home"]
         away_goals = full_time["away"]
 
+        # Skip weird partial / missing scores
         if home_goals is None or away_goals is None:
             continue
 
         winner = m["score"].get("winner")
         if home_goals == 0 and away_goals == 0 and winner is None:
+            # Probably not actually played yet
             continue
 
         utc_date = m.get("utcDate", "")[:10]
@@ -110,17 +130,22 @@ def main():
     matches = fetch_premier_league_matches()
     print(f"Total matches returned by API: {len(matches)}")
 
+    # Ensure live folder exists
+    LIVE_DIR.mkdir(parents=True, exist_ok=True)
+
     # Finished matches
     df_results = build_results_dataframe(matches)
     print(f"Finished matches found: {len(df_results)}")
-    df_results.to_csv("pl_results_from_api.csv", index=False)
-    print("Saved finished results to pl_results_from_api.csv")
+    results_path = LIVE_DIR / "pl_results_from_api.csv"
+    df_results.to_csv(results_path, index=False)
+    print(f"Saved finished results to {results_path}")
 
     # Upcoming fixtures
     df_fixtures = build_fixtures_dataframe(matches)
     print(f"Upcoming / not-finished matches: {len(df_fixtures)}")
-    df_fixtures.to_csv("pl_fixtures_from_api.csv", index=False)
-    print("Saved fixtures to pl_fixtures_from_api.csv")
+    fixtures_path = LIVE_DIR / "pl_fixtures_from_api.csv"
+    df_fixtures.to_csv(fixtures_path, index=False)
+    print(f"Saved fixtures to {fixtures_path}")
 
 
 if __name__ == "__main__":
