@@ -1,0 +1,35 @@
+name: Auto Update Premier League Data
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"   # runs every 12 hours
+  workflow_dispatch: {}       # you can run manually
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run update script
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: python scripts/auto_update.py
+
+      - name: Commit and push new data
+        run: |
+          git config --global user.email "bot@sugar.com"
+          git config --global user.name "Auto Update Bot"
+          git add data/live/*.csv
+          git commit -m "Auto update: refreshed results & predictions" || echo "No changes"
+          git push origin main
