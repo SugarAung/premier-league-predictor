@@ -1,14 +1,4 @@
 season,gameweek,date,home_team,away_team,status
-2025-2026,13,2025-11-29,Sunderland AFC,AFC Bournemouth,TIMED
-2025-2026,13,2025-11-29,Brentford FC,Burnley FC,TIMED
-2025-2026,13,2025-11-29,Manchester City FC,Leeds United FC,TIMED
-2025-2026,13,2025-11-29,Everton FC,Newcastle United FC,TIMED
-2025-2026,13,2025-11-29,Tottenham Hotspur FC,Fulham FC,TIMED
-2025-2026,13,2025-11-30,Crystal Palace FC,Manchester United FC,TIMED
-2025-2026,13,2025-11-30,Aston Villa FC,Wolverhampton Wanderers FC,TIMED
-2025-2026,13,2025-11-30,Nottingham Forest FC,Brighton & Hove Albion FC,TIMED
-2025-2026,13,2025-11-30,West Ham United FC,Liverpool FC,TIMED
-2025-2026,13,2025-11-30,Chelsea FC,Arsenal FC,TIMED
 2025-2026,14,2025-12-02,AFC Bournemouth,Everton FC,TIMED
 2025-2026,14,2025-12-02,Fulham FC,Manchester City FC,TIMED
 2025-2026,14,2025-12-02,Newcastle United FC,Tottenham Hotspur FC,TIMED
@@ -100,12 +90,12 @@ season,gameweek,date,home_team,away_team,status
 2025-2026,22,2026-01-18,Aston Villa FC,Everton FC,TIMED
 2025-2026,22,2026-01-19,Brighton & Hove Albion FC,AFC Bournemouth,TIMED
 2025-2026,23,2026-01-24,West Ham United FC,Sunderland AFC,TIMED
-2025-2026,23,2026-01-24,Brentford FC,Nottingham Forest FC,TIMED
 2025-2026,23,2026-01-24,Burnley FC,Tottenham Hotspur FC,TIMED
 2025-2026,23,2026-01-24,Fulham FC,Brighton & Hove Albion FC,TIMED
 2025-2026,23,2026-01-24,Manchester City FC,Wolverhampton Wanderers FC,TIMED
 2025-2026,23,2026-01-24,AFC Bournemouth,Liverpool FC,TIMED
 2025-2026,23,2026-01-25,Crystal Palace FC,Chelsea FC,TIMED
+2025-2026,23,2026-01-25,Brentford FC,Nottingham Forest FC,TIMED
 2025-2026,23,2026-01-25,Newcastle United FC,Aston Villa FC,TIMED
 2025-2026,23,2026-01-25,Arsenal FC,Manchester United FC,TIMED
 2025-2026,23,2026-01-26,Everton FC,Leeds United FC,TIMED
