@@ -39,3 +39,7 @@ season,gameweek,date,home_team,away_team,pred_result,actual_result,correct,prob_
 2025-2026,15,2025-12-07,Brighton & Hove Albion FC,West Ham United FC,H,D,False,0.49797484,0.15220213,0.3498231
 2025-2026,15,2025-12-07,Fulham FC,Crystal Palace FC,H,A,False,0.540825,0.24315616,0.21601883
 2025-2026,15,2025-12-08,Wolverhampton Wanderers FC,Manchester United FC,H,A,False,0.5511937,0.2668368,0.18196946
+2025-2026,16,2025-12-13,Arsenal FC,Wolverhampton Wanderers FC,H,H,True,0.8245928,0.031369355,0.14403781
+2025-2026,16,2025-12-13,Burnley FC,Fulham FC,A,A,True,0.21730988,0.39064926,0.39204085
+2025-2026,16,2025-12-13,Chelsea FC,Everton FC,H,H,True,0.69152015,0.11217184,0.19630799
+2025-2026,16,2025-12-13,Liverpool FC,Brighton & Hove Albion FC,D,H,False,0.38051316,0.47572213,0.14376473
