@@ -48,3 +48,4 @@ season,gameweek,date,home_team,away_team,pred_result,actual_result,correct,prob_
 2025-2026,16,2025-12-14,Nottingham Forest FC,Tottenham Hotspur FC,H,H,True,0.72581005,0.10270338,0.17148662
 2025-2026,16,2025-12-14,Sunderland AFC,Newcastle United FC,D,H,False,0.23113284,0.652379,0.116488144
 2025-2026,16,2025-12-14,West Ham United FC,Aston Villa FC,H,A,False,0.5565637,0.36670804,0.076728344
+2025-2026,16,2025-12-15,Manchester United FC,AFC Bournemouth,H,D,False,0.49616432,0.14949836,0.35433733
