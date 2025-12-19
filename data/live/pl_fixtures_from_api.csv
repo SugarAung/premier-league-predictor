@@ -77,48 +77,48 @@ season,gameweek,date,home_team,away_team,status
 2025-2026,24,2026-02-01,Aston Villa FC,Brentford FC,TIMED
 2025-2026,24,2026-02-01,Manchester United FC,Fulham FC,TIMED
 2025-2026,24,2026-02-01,Nottingham Forest FC,Crystal Palace FC,TIMED
+2025-2026,28,2026-02-01,Fulham FC,Tottenham Hotspur FC,TIMED
 2025-2026,24,2026-02-01,Tottenham Hotspur FC,Manchester City FC,TIMED
+2025-2026,28,2026-02-01,Arsenal FC,Chelsea FC,TIMED
 2025-2026,24,2026-02-02,Sunderland AFC,Burnley FC,TIMED
-2025-2026,25,2026-02-07,AFC Bournemouth,Aston Villa FC,SCHEDULED
-2025-2026,25,2026-02-07,Brighton & Hove Albion FC,Crystal Palace FC,SCHEDULED
-2025-2026,25,2026-02-07,Arsenal FC,Sunderland AFC,SCHEDULED
-2025-2026,25,2026-02-07,Burnley FC,West Ham United FC,SCHEDULED
-2025-2026,25,2026-02-07,Fulham FC,Everton FC,SCHEDULED
-2025-2026,25,2026-02-07,Liverpool FC,Manchester City FC,SCHEDULED
-2025-2026,25,2026-02-07,Leeds United FC,Nottingham Forest FC,SCHEDULED
-2025-2026,25,2026-02-07,Manchester United FC,Tottenham Hotspur FC,SCHEDULED
-2025-2026,25,2026-02-07,Newcastle United FC,Brentford FC,SCHEDULED
-2025-2026,25,2026-02-07,Wolverhampton Wanderers FC,Chelsea FC,SCHEDULED
-2025-2026,26,2026-02-11,Sunderland AFC,Liverpool FC,SCHEDULED
-2025-2026,26,2026-02-11,Aston Villa FC,Brighton & Hove Albion FC,SCHEDULED
-2025-2026,26,2026-02-11,Crystal Palace FC,Burnley FC,SCHEDULED
-2025-2026,26,2026-02-11,Brentford FC,Arsenal FC,SCHEDULED
-2025-2026,26,2026-02-11,Chelsea FC,Leeds United FC,SCHEDULED
-2025-2026,26,2026-02-11,Everton FC,AFC Bournemouth,SCHEDULED
-2025-2026,26,2026-02-11,Manchester City FC,Fulham FC,SCHEDULED
-2025-2026,26,2026-02-11,Nottingham Forest FC,Wolverhampton Wanderers FC,SCHEDULED
-2025-2026,26,2026-02-11,Tottenham Hotspur FC,Newcastle United FC,SCHEDULED
-2025-2026,26,2026-02-11,West Ham United FC,Manchester United FC,SCHEDULED
-2025-2026,27,2026-02-21,Sunderland AFC,Fulham FC,SCHEDULED
-2025-2026,27,2026-02-21,Aston Villa FC,Leeds United FC,SCHEDULED
-2025-2026,27,2026-02-21,Crystal Palace FC,Wolverhampton Wanderers FC,SCHEDULED
-2025-2026,27,2026-02-21,Brentford FC,Brighton & Hove Albion FC,SCHEDULED
-2025-2026,27,2026-02-21,Chelsea FC,Burnley FC,SCHEDULED
-2025-2026,27,2026-02-21,Everton FC,Manchester United FC,SCHEDULED
-2025-2026,27,2026-02-21,Manchester City FC,Newcastle United FC,SCHEDULED
-2025-2026,27,2026-02-21,Nottingham Forest FC,Liverpool FC,SCHEDULED
-2025-2026,27,2026-02-21,Tottenham Hotspur FC,Arsenal FC,SCHEDULED
-2025-2026,27,2026-02-21,West Ham United FC,AFC Bournemouth,SCHEDULED
-2025-2026,28,2026-02-28,AFC Bournemouth,Sunderland AFC,SCHEDULED
-2025-2026,28,2026-02-28,Brighton & Hove Albion FC,Nottingham Forest FC,SCHEDULED
-2025-2026,28,2026-02-28,Arsenal FC,Chelsea FC,SCHEDULED
-2025-2026,28,2026-02-28,Burnley FC,Brentford FC,SCHEDULED
-2025-2026,28,2026-02-28,Fulham FC,Tottenham Hotspur FC,SCHEDULED
-2025-2026,28,2026-02-28,Liverpool FC,West Ham United FC,SCHEDULED
-2025-2026,28,2026-02-28,Leeds United FC,Manchester City FC,SCHEDULED
-2025-2026,28,2026-02-28,Manchester United FC,Crystal Palace FC,SCHEDULED
-2025-2026,28,2026-02-28,Newcastle United FC,Everton FC,SCHEDULED
-2025-2026,28,2026-02-28,Wolverhampton Wanderers FC,Aston Villa FC,SCHEDULED
+2025-2026,25,2026-02-06,Leeds United FC,Nottingham Forest FC,TIMED
+2025-2026,25,2026-02-07,Manchester United FC,Tottenham Hotspur FC,TIMED
+2025-2026,25,2026-02-07,AFC Bournemouth,Aston Villa FC,TIMED
+2025-2026,25,2026-02-07,Arsenal FC,Sunderland AFC,TIMED
+2025-2026,25,2026-02-07,Burnley FC,West Ham United FC,TIMED
+2025-2026,25,2026-02-07,Fulham FC,Everton FC,TIMED
+2025-2026,25,2026-02-07,Wolverhampton Wanderers FC,Chelsea FC,TIMED
+2025-2026,25,2026-02-07,Newcastle United FC,Brentford FC,TIMED
+2025-2026,25,2026-02-08,Brighton & Hove Albion FC,Crystal Palace FC,TIMED
+2025-2026,25,2026-02-08,Liverpool FC,Manchester City FC,TIMED
+2025-2026,26,2026-02-10,Chelsea FC,Leeds United FC,TIMED
+2025-2026,26,2026-02-10,Everton FC,AFC Bournemouth,TIMED
+2025-2026,26,2026-02-10,Tottenham Hotspur FC,Newcastle United FC,TIMED
+2025-2026,26,2026-02-10,West Ham United FC,Manchester United FC,TIMED
+2025-2026,26,2026-02-11,Aston Villa FC,Brighton & Hove Albion FC,TIMED
+2025-2026,26,2026-02-11,Crystal Palace FC,Burnley FC,TIMED
+2025-2026,26,2026-02-11,Manchester City FC,Fulham FC,TIMED
+2025-2026,26,2026-02-11,Nottingham Forest FC,Wolverhampton Wanderers FC,TIMED
+2025-2026,26,2026-02-11,Sunderland AFC,Liverpool FC,TIMED
+2025-2026,26,2026-02-12,Brentford FC,Arsenal FC,TIMED
+2025-2026,27,2026-02-21,Manchester City FC,Newcastle United FC,TIMED
+2025-2026,27,2026-02-21,Aston Villa FC,Leeds United FC,TIMED
+2025-2026,27,2026-02-21,Crystal Palace FC,Wolverhampton Wanderers FC,TIMED
+2025-2026,27,2026-02-21,Brentford FC,Brighton & Hove Albion FC,TIMED
+2025-2026,27,2026-02-21,Chelsea FC,Burnley FC,TIMED
+2025-2026,27,2026-02-21,Nottingham Forest FC,Liverpool FC,TIMED
+2025-2026,27,2026-02-21,West Ham United FC,AFC Bournemouth,TIMED
+2025-2026,27,2026-02-22,Sunderland AFC,Fulham FC,TIMED
+2025-2026,27,2026-02-22,Tottenham Hotspur FC,Arsenal FC,TIMED
+2025-2026,27,2026-02-23,Everton FC,Manchester United FC,TIMED
+2025-2026,28,2026-02-27,Wolverhampton Wanderers FC,Aston Villa FC,TIMED
+2025-2026,28,2026-02-28,AFC Bournemouth,Sunderland AFC,TIMED
+2025-2026,28,2026-02-28,Brighton & Hove Albion FC,Nottingham Forest FC,TIMED
+2025-2026,28,2026-02-28,Burnley FC,Brentford FC,TIMED
+2025-2026,28,2026-02-28,Liverpool FC,West Ham United FC,TIMED
+2025-2026,28,2026-02-28,Manchester United FC,Crystal Palace FC,TIMED
+2025-2026,28,2026-02-28,Newcastle United FC,Everton FC,TIMED
+2025-2026,28,2026-02-28,Leeds United FC,Manchester City FC,TIMED
 2025-2026,29,2026-03-04,AFC Bournemouth,Brentford FC,SCHEDULED
 2025-2026,29,2026-03-04,Aston Villa FC,Chelsea FC,SCHEDULED
 2025-2026,29,2026-03-04,Brighton & Hove Albion FC,Arsenal FC,SCHEDULED
