@@ -58,3 +58,4 @@ season,gameweek,date,home_team,away_team,pred_result,actual_result,correct,prob_
 2025-2026,17,2025-12-20,Tottenham Hotspur FC,Liverpool FC,H,A,False,0.50140834,0.19834074,0.30025095
 2025-2026,17,2025-12-20,Wolverhampton Wanderers FC,Brentford FC,H,A,False,0.6572224,0.16521841,0.17755927
 2025-2026,17,2025-12-21,Aston Villa FC,Manchester United FC,H,H,True,0.49286726,0.10993956,0.39719316
+2025-2026,17,2025-12-22,Fulham FC,Nottingham Forest FC,D,H,False,0.3035992,0.50341165,0.19298917
