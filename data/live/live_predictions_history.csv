@@ -79,3 +79,7 @@ season,gameweek,date,home_team,away_team,pred_result,actual_result,correct,prob_
 2025-2026,19,2026-01-01,Crystal Palace FC,Fulham FC,D,D,True,0.23132274,0.5751744,0.19350281
 2025-2026,19,2026-01-01,Liverpool FC,Leeds United FC,D,D,True,0.18999135,0.73178124,0.0782274
 2025-2026,19,2026-01-01,Sunderland AFC,Manchester City FC,H,D,False,0.7511023,0.16118026,0.08771744
+2025-2026,20,2026-01-03,AFC Bournemouth,Arsenal FC,D,A,False,0.32396996,0.46708468,0.20894533
+2025-2026,20,2026-01-03,Aston Villa FC,Nottingham Forest FC,H,H,True,0.5016076,0.09894022,0.39945215
+2025-2026,20,2026-01-03,Brighton & Hove Albion FC,Burnley FC,H,H,True,0.592871,0.18874182,0.21838713
+2025-2026,20,2026-01-03,Wolverhampton Wanderers FC,West Ham United FC,H,H,True,0.4934309,0.24995378,0.2566153
