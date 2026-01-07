@@ -89,3 +89,4 @@ season,gameweek,date,home_team,away_team,pred_result,actual_result,correct,prob_
 2025-2026,20,2026-01-04,Manchester City FC,Chelsea FC,H,D,False,0.5402959,0.06426527,0.3954388
 2025-2026,20,2026-01-04,Newcastle United FC,Crystal Palace FC,H,H,True,0.45995212,0.41059014,0.12945773
 2025-2026,20,2026-01-04,Tottenham Hotspur FC,Sunderland AFC,H,D,False,0.8476922,0.038866937,0.11344085
+2025-2026,21,2026-01-06,West Ham United FC,Nottingham Forest FC,D,A,False,0.2552838,0.6079766,0.13673961
