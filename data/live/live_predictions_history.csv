@@ -98,3 +98,4 @@ season,gameweek,date,home_team,away_team,pred_result,actual_result,correct,prob_
 2025-2026,21,2026-01-07,Fulham FC,Chelsea FC,H,H,True,0.4978019,0.39708292,0.105115175
 2025-2026,21,2026-01-07,Manchester City FC,Brighton & Hove Albion FC,H,D,False,0.6623878,0.09915781,0.2384544
 2025-2026,21,2026-01-07,Newcastle United FC,Leeds United FC,D,H,False,0.38658166,0.41272947,0.20068881
+2025-2026,21,2026-01-08,Arsenal FC,Liverpool FC,H,D,False,0.60383904,0.0447269,0.35143405
