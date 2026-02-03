@@ -1,5 +1,4 @@
 season,gameweek,date,home_team,away_team,status
-2025-2026,24,2026-02-02,Sunderland AFC,Burnley FC,TIMED
 2025-2026,25,2026-02-06,Leeds United FC,Nottingham Forest FC,TIMED
 2025-2026,25,2026-02-07,Manchester United FC,Tottenham Hotspur FC,TIMED
 2025-2026,25,2026-02-07,AFC Bournemouth,Aston Villa FC,TIMED
@@ -20,23 +19,23 @@ season,gameweek,date,home_team,away_team,status
 2025-2026,26,2026-02-11,Nottingham Forest FC,Wolverhampton Wanderers FC,TIMED
 2025-2026,26,2026-02-11,Sunderland AFC,Liverpool FC,TIMED
 2025-2026,26,2026-02-12,Brentford FC,Arsenal FC,TIMED
-2025-2026,27,2026-02-21,Manchester City FC,Newcastle United FC,TIMED
 2025-2026,27,2026-02-21,Aston Villa FC,Leeds United FC,TIMED
 2025-2026,27,2026-02-21,Brentford FC,Brighton & Hove Albion FC,TIMED
 2025-2026,27,2026-02-21,Chelsea FC,Burnley FC,TIMED
-2025-2026,27,2026-02-21,Nottingham Forest FC,Liverpool FC,TIMED
 2025-2026,27,2026-02-21,West Ham United FC,AFC Bournemouth,TIMED
+2025-2026,27,2026-02-21,Manchester City FC,Newcastle United FC,TIMED
 2025-2026,27,2026-02-22,Sunderland AFC,Fulham FC,TIMED
 2025-2026,27,2026-02-22,Crystal Palace FC,Wolverhampton Wanderers FC,TIMED
+2025-2026,27,2026-02-22,Nottingham Forest FC,Liverpool FC,TIMED
 2025-2026,27,2026-02-22,Tottenham Hotspur FC,Arsenal FC,TIMED
 2025-2026,27,2026-02-23,Everton FC,Manchester United FC,TIMED
 2025-2026,28,2026-02-27,Wolverhampton Wanderers FC,Aston Villa FC,TIMED
 2025-2026,28,2026-02-28,AFC Bournemouth,Sunderland AFC,TIMED
-2025-2026,28,2026-02-28,Brighton & Hove Albion FC,Nottingham Forest FC,TIMED
 2025-2026,28,2026-02-28,Burnley FC,Brentford FC,TIMED
 2025-2026,28,2026-02-28,Liverpool FC,West Ham United FC,TIMED
 2025-2026,28,2026-02-28,Newcastle United FC,Everton FC,TIMED
 2025-2026,28,2026-02-28,Leeds United FC,Manchester City FC,TIMED
+2025-2026,28,2026-03-01,Brighton & Hove Albion FC,Nottingham Forest FC,TIMED
 2025-2026,28,2026-03-01,Fulham FC,Tottenham Hotspur FC,TIMED
 2025-2026,28,2026-03-01,Manchester United FC,Crystal Palace FC,TIMED
 2025-2026,28,2026-03-01,Arsenal FC,Chelsea FC,TIMED
