@@ -1,9 +1,4 @@
 season,gameweek,date,home_team,away_team,status
-2025-2026,31,2026-03-21,Manchester City FC,Crystal Palace FC,POSTPONED
-2025-2026,32,2026-04-12,Sunderland AFC,Tottenham Hotspur FC,TIMED
-2025-2026,32,2026-04-12,Crystal Palace FC,Newcastle United FC,TIMED
-2025-2026,32,2026-04-12,Nottingham Forest FC,Aston Villa FC,TIMED
-2025-2026,32,2026-04-12,Chelsea FC,Manchester City FC,TIMED
 2025-2026,32,2026-04-13,Manchester United FC,Leeds United FC,TIMED
 2025-2026,33,2026-04-18,Brentford FC,Fulham FC,TIMED
 2025-2026,33,2026-04-18,Newcastle United FC,AFC Bournemouth,TIMED
@@ -55,6 +50,7 @@ season,gameweek,date,home_team,away_team,status
 2025-2026,37,2026-05-17,Manchester United FC,Nottingham Forest FC,TIMED
 2025-2026,37,2026-05-17,Newcastle United FC,West Ham United FC,TIMED
 2025-2026,37,2026-05-17,Wolverhampton Wanderers FC,Fulham FC,TIMED
+2025-2026,31,2026-05-22,Manchester City FC,Crystal Palace FC,POSTPONED
 2025-2026,38,2026-05-24,Sunderland AFC,Chelsea FC,TIMED
 2025-2026,38,2026-05-24,Brighton & Hove Albion FC,Manchester United FC,TIMED
 2025-2026,38,2026-05-24,Crystal Palace FC,Arsenal FC,TIMED
