@@ -1,9 +1,4 @@
 season,gameweek,date,home_team,away_team,status
-2025-2026,33,2026-04-18,Brentford FC,Fulham FC,IN_PLAY
-2025-2026,33,2026-04-18,Newcastle United FC,AFC Bournemouth,TIMED
-2025-2026,33,2026-04-18,Leeds United FC,Wolverhampton Wanderers FC,TIMED
-2025-2026,33,2026-04-18,Tottenham Hotspur FC,Brighton & Hove Albion FC,TIMED
-2025-2026,33,2026-04-18,Chelsea FC,Manchester United FC,TIMED
 2025-2026,33,2026-04-19,Nottingham Forest FC,Burnley FC,TIMED
 2025-2026,33,2026-04-19,Aston Villa FC,Sunderland AFC,TIMED
 2025-2026,33,2026-04-19,Everton FC,Liverpool FC,TIMED
@@ -20,11 +15,11 @@ season,gameweek,date,home_team,away_team,status
 2025-2026,34,2026-04-25,Arsenal FC,Newcastle United FC,TIMED
 2025-2026,34,2026-04-27,Manchester United FC,Brentford FC,TIMED
 2025-2026,35,2026-05-01,Leeds United FC,Burnley FC,TIMED
-2025-2026,35,2026-05-02,AFC Bournemouth,Crystal Palace FC,TIMED
 2025-2026,35,2026-05-02,Brentford FC,West Ham United FC,TIMED
 2025-2026,35,2026-05-02,Newcastle United FC,Brighton & Hove Albion FC,TIMED
 2025-2026,35,2026-05-02,Wolverhampton Wanderers FC,Sunderland AFC,TIMED
 2025-2026,35,2026-05-02,Arsenal FC,Fulham FC,TIMED
+2025-2026,35,2026-05-03,AFC Bournemouth,Crystal Palace FC,TIMED
 2025-2026,35,2026-05-03,Manchester United FC,Liverpool FC,TIMED
 2025-2026,35,2026-05-03,Aston Villa FC,Tottenham Hotspur FC,TIMED
 2025-2026,35,2026-05-04,Chelsea FC,Nottingham Forest FC,TIMED
@@ -32,10 +27,10 @@ season,gameweek,date,home_team,away_team,status
 2025-2026,36,2026-05-09,Liverpool FC,Chelsea FC,TIMED
 2025-2026,36,2026-05-09,Sunderland AFC,Manchester United FC,TIMED
 2025-2026,36,2026-05-09,Brighton & Hove Albion FC,Wolverhampton Wanderers FC,TIMED
-2025-2026,36,2026-05-09,Crystal Palace FC,Everton FC,TIMED
-2025-2026,36,2026-05-09,Burnley FC,Aston Villa FC,TIMED
 2025-2026,36,2026-05-09,Fulham FC,AFC Bournemouth,TIMED
 2025-2026,36,2026-05-09,Manchester City FC,Brentford FC,TIMED
+2025-2026,36,2026-05-10,Crystal Palace FC,Everton FC,TIMED
+2025-2026,36,2026-05-10,Burnley FC,Aston Villa FC,TIMED
 2025-2026,36,2026-05-10,Nottingham Forest FC,Newcastle United FC,TIMED
 2025-2026,36,2026-05-10,West Ham United FC,Arsenal FC,TIMED
 2025-2026,36,2026-05-11,Tottenham Hotspur FC,Leeds United FC,TIMED
