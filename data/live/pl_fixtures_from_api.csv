@@ -1,7 +1,7 @@
 season,gameweek,date,home_team,away_team,status
-2025-2026,36,2026-05-10,Crystal Palace FC,Everton FC,TIMED
-2025-2026,36,2026-05-10,Burnley FC,Aston Villa FC,TIMED
-2025-2026,36,2026-05-10,Nottingham Forest FC,Newcastle United FC,TIMED
+2025-2026,36,2026-05-10,Crystal Palace FC,Everton FC,IN_PLAY
+2025-2026,36,2026-05-10,Burnley FC,Aston Villa FC,IN_PLAY
+2025-2026,36,2026-05-10,Nottingham Forest FC,Newcastle United FC,IN_PLAY
 2025-2026,36,2026-05-10,West Ham United FC,Arsenal FC,TIMED
 2025-2026,36,2026-05-11,Tottenham Hotspur FC,Leeds United FC,TIMED
 2025-2026,31,2026-05-13,Manchester City FC,Crystal Palace FC,TIMED
