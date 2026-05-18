@@ -175,3 +175,9 @@ season,gameweek,date,home_team,away_team,pred_result,actual_result,correct,prob_
 2025-2026,36,2026-05-09,Liverpool FC,Chelsea FC,H,D,False,0.58821,0.34699866,0.06479132
 2025-2026,36,2026-05-09,Manchester City FC,Brentford FC,H,H,True,0.5925925,0.12503515,0.28237236
 2025-2026,36,2026-05-09,Sunderland AFC,Manchester United FC,H,D,False,0.52808875,0.32951888,0.14239241
+2025-2026,37,2026-05-17,Brentford FC,Crystal Palace FC,H,D,False,0.74301636,0.064759225,0.19222444
+2025-2026,37,2026-05-17,Everton FC,Sunderland AFC,H,A,False,0.5355969,0.35457113,0.109831914
+2025-2026,37,2026-05-17,Leeds United FC,Brighton & Hove Albion FC,H,H,True,0.49090272,0.26002565,0.2490716
+2025-2026,37,2026-05-17,Manchester United FC,Nottingham Forest FC,H,H,True,0.41572204,0.22295861,0.36131936
+2025-2026,37,2026-05-17,Newcastle United FC,West Ham United FC,H,H,True,0.41455013,0.3630061,0.22244376
+2025-2026,37,2026-05-17,Wolverhampton Wanderers FC,Fulham FC,H,D,False,0.6773467,0.16130757,0.16134575
